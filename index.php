@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: JS Advancers - React on the Frontend
- * Description: 
+ * Description:
  * Version: 1.0.0
  * Author: js-advancers
  * Text Domain: js-advancers
@@ -25,7 +25,7 @@ function register_block_assets() {
     wp_register_style(
         'block-style',
         plugins_url( '/style.css', __FILE__ ),
-        []    
+        []
     );
 
     // register our editor styles
@@ -36,7 +36,7 @@ function register_block_assets() {
     );
 
     // register our block
-    register_block_type( 'jsadvancers/data-visualisatioin', array(
+    register_block_type( 'jsadvancers/data-visualisation', array(
         'editor_script' => 'block-js',
         'editor_style' => 'block-editor-style',
         'style' => 'block-style'
@@ -46,13 +46,10 @@ function register_block_assets() {
 
     if ( ! is_admin() ) {
         wp_enqueue_script(
-            __NAMESPACE__.'\frontend-script', 
-            plugins_url('/build/frontend.js', __FILE__ ), 
+            __NAMESPACE__.'\frontend-script',
+            plugins_url('/build/frontend.js', __FILE__ ),
             ['wp-element','wp-dom-ready', 'wp-api-fetch']
         );
     }
 
 }
-
-
-
